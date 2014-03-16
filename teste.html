@@ -1,17 +1,14 @@
 <html>
+<head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
 <!--script src="js/undescore.js"></script-->
-        
-
-
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
 
 <div class="well">
 
 <script type="text/javascript">
-
-
 
 
 //pegando os dados do formulário, nome de cada jogador
@@ -28,30 +25,23 @@ jogador[8] = "jogador8"
 jogador[9] = "jogador9"
 
 
-
+//Randomificando os jogadores
 var random = _.shuffle([jogador[0],jogador[1],jogador[2],jogador[3],jogador[4],jogador[5],jogador[6],jogador[7],jogador[8],jogador[9]]);
 
 
+//Dividindo em 2 times de 5 jogadores cada
+var primeiros = _.first(random, 5);
+var ultimos = _.last(random, 5);
+
+
+
+
+var botao = document.getElementById("botao");
+
+
 console.log(random);
-
-
-
-//$arr = array($j1,$j2,$j3,$j4,$j5,$j6,$j7,$j8,$j9,$j10);
-//$array = array_slice($arr, 0, 10); 
-
-//print_r(array_chunk($array, 5));
-
-//shuffle($array);
-//print_r($array);
-
-//var teste = _.shuffle([jogador]);
-//console.log(teste);
-//RANDOM - Retorna um número aleatório dentro do range passado, incluindo os números passados.
-//var primeiros = _.first(jogador, 5); //com parâmetro
-//console.log(primeiros);
-
-//var primeiros = _.last(jogador, 5); //sem parâmetro
-//console.log(primeiros);
+console.log(primeiros);
+console.log(ultimos);
 
 </script>
 
@@ -60,33 +50,6 @@ console.log(random);
 
 
 
-
-
-<script type="text/javascript">
-function randOrd() {
-    return (Math.round(Math.random())-0.10);
-}
-
-var jogador = Array();
-  jogador[0] = "Teste";
-  jogador[1] = "João";
-  jogador[2] = "Leo";
-  jogador[3] = "Maria";
-  jogador[4] = "Silvia";
-  jogador[5] = "Carlos";
-  jogador[6] = "Mauricio";
-  jogador[7] = "Roger";
-  jogador[8] = "Aldemir";
-  jogador[9] = "Pedro";
-
-jogador.sort(randOrd);
-
-totalNomes = jogador.sizeOf;
-for (i=0; i<totalNomes ; i++) {
-    document.write('<br /> Este é o array['+i+']: '+jogador[i]);
-}
-//event.preventDefault()
-</script>
 
 
 
