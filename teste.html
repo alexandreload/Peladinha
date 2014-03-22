@@ -11,6 +11,68 @@
 
 
 <form>
+
+
+
+<script type="text/javascript">
+//var botao = document.getElementById("botao");
+
+function mostrar(){
+//pegando os dados do formulário, nome de cada jogador
+var jogador = Array();
+jogador[0] = document.getElementById("jogador0").value;
+jogador[1] = document.getElementById("jogador1").value;
+jogador[2] = document.getElementById("jogador2").value;
+jogador[3] = document.getElementById("jogador3").value;
+jogador[4] = document.getElementById("jogador4").value;
+jogador[5] = document.getElementById("jogador5").value;
+jogador[6] = document.getElementById("jogador6").value;
+jogador[7] = document.getElementById("jogador7").value;
+jogador[8] = document.getElementById("jogador8").value;
+jogador[9] = document.getElementById("jogador9").value;
+
+
+//jogador[9] = "jogador9"
+
+//Randomificando os jogadores
+var random = _.shuffle([jogador[0],jogador[1],jogador[2],jogador[3],jogador[4],jogador[5],jogador[6],jogador[7],jogador[8],jogador[9]]);
+
+
+//Dividindo em 2 times de 5 jogadores cada
+var primeiros = _.first(random, 5);
+var ultimos = _.last(random, 5);
+
+
+alert(random);
+alert(primeiros);
+alert(ultimos);
+
+
+console.log(random);
+console.log(primeiros);
+console.log(ultimos);
+}
+</script>
+
+
+<div class="row">
+<div id="textDiv"></div>
+<script type="text/javascript">
+    var div = document.getElementById("textDiv");
+    div.textContent = primeiros;
+    var text = div.textContent;
+</script>
+
+
+<div id="textDiv2"></div>
+<script type="text/javascript">
+    var div = document.getElementById("textDiv2");
+    div.textContent = ultimos;
+    var text = div.textContent;
+</script>
+
+
+
 <div class="row">
 
 <div class="large-6 columns">
@@ -94,81 +156,10 @@
       </div>
 
 <div>
-  <input onClick="mostrar()" value="mostrar" type="button" name="cmdSalvar" id="cmdSalvar" class="button"/>
+  <input onClick="mostrar();" value="mostrar" type="button" name="cmdSalvar" id="cmdSalvar" class="button"/>
 
 </div>
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-var botao = document.getElementById("botao");
-//pegando os dados do formulário, nome de cada jogador
-var jogador = Array();
-jogador[0] = document.getElementById("jogador0").value;
-jogador[1] = document.getElementById("jogador1").value;
-jogador[2] = document.getElementById("jogador2").value;
-jogador[3] = document.getElementById("jogador3").value;
-jogador[4] = document.getElementById("jogador4").value;
-jogador[5] = document.getElementById("jogador5").value;
-jogador[6] = document.getElementById("jogador6").value;
-jogador[7] = document.getElementById("jogador7").value;
-jogador[8] = document.getElementById("jogador8").value;
-jogador[9] = document.getElementById("jogador9").value;
-
-
-//jogador[9] = "jogador9"
-
-//Randomificando os jogadores
-var random = _.shuffle([jogador[0],jogador[1],jogador[2],jogador[3],jogador[4],jogador[5],jogador[6],jogador[7],jogador[8],jogador[9]]);
-
-
-//Dividindo em 2 times de 5 jogadores cada
-var primeiros = _.first(random, 5);
-var ultimos = _.last(random, 5);
-
-
-
-
-
-console.log(random);
-console.log(primeiros);
-console.log(ultimos);
-
-</script>
-
-
-<div class="row">
-<div id="textDiv"></div>
-<script type="text/javascript">
-    var div = document.getElementById("textDiv");
-    div.textContent = primeiros;
-    var text = div.textContent;
-</script>
-
-
-<div id="textDiv2"></div>
-<script type="text/javascript">
-    var div = document.getElementById("textDiv2");
-    div.textContent = ultimos;
-    var text = div.textContent;
-</script>
-
-
-
-
-
-
 
 <body>
 </br>
