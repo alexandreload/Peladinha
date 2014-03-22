@@ -9,75 +9,14 @@
 <!--script src="js/undescore.js"></script-->
 </head>
 
-<script type="text/javascript">
-function mostrar(){
-var botao = document.getElementById("botao");
-//pegando os dados do formulário, nome de cada jogador
-var jogador = Array();
-jogador[0] = document.getElementById("jogador0");
-jogador[1] = document.getElementById("jogador1");
-jogador[2] = document.getElementById("jogador2");
-jogador[3] = document.getElementById("jogador3");
-jogador[4] = document.getElementById("jogador4");
-jogador[5] = "jogador5"
-jogador[6] = "jogador6"
-jogador[7] = "jogador7"
-jogador[8] = "jogador8"
-jogador[9] = "jogador9"
 
-
-//Randomificando os jogadores
-var random = _.shuffle([jogador[0],jogador[1],jogador[2],jogador[3],jogador[4],jogador[5],jogador[6],jogador[7],jogador[8],jogador[9]]);
-
-
-//Dividindo em 2 times de 5 jogadores cada
-var primeiros = _.first(random, 5);
-var ultimos = _.last(random, 5);
-
-}
-
-
-
-
-
-//console.log(random);
-//console.log(primeiros);
-//console.log(ultimos);
-
-</script>
-
-
-<div class="row">
-<div id="textDiv"></div>
-<script type="text/javascript">
-    var div = document.getElementById("textDiv");
-    div.textContent = primeiros;
-    var text = div.textContent;
-</script>
-
-
-<div id="textDiv2"></div>
-<script type="text/javascript">
-    var div = document.getElementById("textDiv2");
-    div.textContent = ultimos;
-    var text = div.textContent;
-</script>
-
-
-
-
-
-
-
-<body>
-</br>
 <form>
 <div class="row">
 
 <div class="large-6 columns">
 
         <div class="small-3 columns">
-          <label for="right-label" class="right inline">Label</label>
+          <label for="right-label" class="right inline">Jogador</label>
         </div>
         <div class="small-9 columns">
           <input type="text" id="jogador0" placeholder="Jogador 1">
@@ -89,8 +28,6 @@ var ultimos = _.last(random, 5);
         <div class="small-9 columns">
           <input type="text" id="jogador1" placeholder="Jogador 2">
         </div>
-
-
        
         <div class="small-3 columns">
           <label for="right-label" class="right inline">Label</label>
@@ -120,7 +57,7 @@ var ultimos = _.last(random, 5);
           <label for="right-label" class="right inline">Label</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" id="right-label" placeholder="Jogador 6">
+          <input type="text" id="jogador5" placeholder="Jogador 6">
         </div>
 
        
@@ -128,7 +65,7 @@ var ultimos = _.last(random, 5);
           <label for="right-label" class="right inline">Label</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" id="right-label" placeholder="Jogador 7">
+          <input type="text" id="jogador6" placeholder="Jogador 7">
         </div>
 
    
@@ -136,7 +73,7 @@ var ultimos = _.last(random, 5);
           <label for="right-label" class="right inline">Label</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" id="right-label" placeholder="Jogador 8">
+          <input type="text" id="jogador7" placeholder="Jogador 8">
         </div>
 
       
@@ -144,7 +81,7 @@ var ultimos = _.last(random, 5);
           <label for="right-label" class="right inline">Label</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" id="right-label" placeholder="Jogador 9">
+          <input type="text" id="jogador8" placeholder="Jogador 9">
         </div>
 
         
@@ -152,15 +89,90 @@ var ultimos = _.last(random, 5);
           <label for="right-label" class="right inline">Label</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" id="right-label" placeholder="Jogador 10">
+          <input type="text" id="jogador9" placeholder="Jogador 10">
         </div>
       </div>
 
 <div>
-	<input onClick="mostrar()" value="mostrar" type="button" name="cmdSalvar" id="cmdSalvar" class="button"/>
+  <input onClick="mostrar()" value="mostrar" type="button" name="cmdSalvar" id="cmdSalvar" class="button"/>
 
 </div>
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var botao = document.getElementById("botao");
+//pegando os dados do formulário, nome de cada jogador
+var jogador = Array();
+jogador[0] = document.getElementById("jogador0").value;
+jogador[1] = document.getElementById("jogador1").value;
+jogador[2] = document.getElementById("jogador2").value;
+jogador[3] = document.getElementById("jogador3").value;
+jogador[4] = document.getElementById("jogador4").value;
+jogador[5] = document.getElementById("jogador5").value;
+jogador[6] = document.getElementById("jogador6").value;
+jogador[7] = document.getElementById("jogador7").value;
+jogador[8] = document.getElementById("jogador8").value;
+jogador[9] = document.getElementById("jogador9").value;
+
+
+//jogador[9] = "jogador9"
+
+//Randomificando os jogadores
+var random = _.shuffle([jogador[0],jogador[1],jogador[2],jogador[3],jogador[4],jogador[5],jogador[6],jogador[7],jogador[8],jogador[9]]);
+
+
+//Dividindo em 2 times de 5 jogadores cada
+var primeiros = _.first(random, 5);
+var ultimos = _.last(random, 5);
+
+
+
+
+
+console.log(random);
+console.log(primeiros);
+console.log(ultimos);
+
+</script>
+
+
+<div class="row">
+<div id="textDiv"></div>
+<script type="text/javascript">
+    var div = document.getElementById("textDiv");
+    div.textContent = primeiros;
+    var text = div.textContent;
+</script>
+
+
+<div id="textDiv2"></div>
+<script type="text/javascript">
+    var div = document.getElementById("textDiv2");
+    div.textContent = ultimos;
+    var text = div.textContent;
+</script>
+
+
+
+
+
+
+
+<body>
+</br>
+
 
 
 
